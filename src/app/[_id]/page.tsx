@@ -35,14 +35,30 @@ async function page({ searchParams }: any) {
       <div className="w-full md:w-1/2 flex flex-col gap-2">
         <h2 className="text-3xl font-semibold">{product?.title}</h2>
         <p className="flex items-center gap-10">
-          <FormattedPrice amount={product?.price} className="text-lg font-semibold" />
-          <FormattedPrice amount={product?.previousPrice} className="text-zinc-500 line-through" />
+          <FormattedPrice
+            amount={product?.price}
+            className="text-lg font-semibold"
+          />
+          <FormattedPrice
+            amount={product?.previousPrice}
+            className="text-zinc-500 line-through"
+          />
         </p>
         <p>
-          You saved {" "} <FormattedPrice amount={product?.previousPrice - product?.price} className="text-base font-semibold bg-designColor underline underline-offset-2" />{" "} from this product.
+          You saved{" "}
+          <FormattedPrice
+            amount={product?.previousPrice - product?.price}
+            className="text-base font-semibold bg-designColor underline underline-offset-2"
+          />{" "}
+          from this product.
         </p>
         <button>Add to cart</button>
-        { product?.isNew}
+        {product?.isNew && (
+          <p className="text-designColor font-semibold">New Arrival</p>
+        )}
+        <p>
+          Brand: <span className="font-semibold">{product?.brand}</span>
+        </p>
       </div>
     </Container>
   );
