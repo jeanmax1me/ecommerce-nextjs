@@ -52,13 +52,17 @@ async function page({ searchParams }: any) {
           />{" "}
           from this product.
         </p>
-        <button>Add to cart</button>
+        <button className="bg-designColor/80 text-zinc-700 px-6 py-2 font-medium rounded-md hover:bg-designColor hover:text-black cursor-pointer duration-200 hover:shadow-lg w-40 my-2">Add to cart</button>
         {product?.isNew && (
           <p className="text-designColor font-semibold">New Arrival</p>
         )}
         <p>
           Brand: <span className="font-semibold">{product?.brand}</span>
         </p>
+        <p>
+          Category: <span className="font-semibold">{product?.category}</span>
+        </p>
+        <p>{product?.description}</p>
       </div>
     </Container>
   );

@@ -24,7 +24,7 @@ export const getProducts = async () => {
   };
   export const getPhoneCases = async () => {
     const res = await fetch(
-      "https://jsonserver.reactbd.com/amazonpro/category/phone case",
+      "https://jsonserver.reactbd.com/amazonpro/category/phone%20case",
       {
         cache: "no-cache",
       }
